@@ -1,5 +1,5 @@
 with raw_review as(
-select * from AIRBNB.RAW.RAW_REVIEWS
+select * from {{source('airbnb','review')}}
 )
 
 select 

@@ -10,7 +10,7 @@ sources:
    - name: hosts
      identifier: raw_hosts
      
-   - name: reviews
+   - name: review
      identifier: raw_reviews
      loaded_at_field: date
      freshness:

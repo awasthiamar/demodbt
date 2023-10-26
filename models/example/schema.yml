@@ -1,21 +1,27 @@
-
 version: 2
-
 models:
-    - name: my_first_dbt_model
-      description: "A starter dbt model"
-      columns:
-          - name: id
-            description: "The primary key for this table"
-            tests:
-                - unique
-                - not_null
+ - name: dim_listing_cleansed
+   columns:
 
-    - name: my_second_dbt_model
-      description: "A starter dbt model"
-      columns:
-          - name: id
-            description: "The primary key for this table"
-            tests:
-                - unique
-                - not_null
+   - name: listing_id
+     tests:
+      - unique
+      - not_null
+
+   - name: host_id
+     tests:
+       - not_null
+       - relationships:
+           to: ref('dim_host_cleansed')
+           field: host_id
+
+   - name: room_type
+     tests:
+     - accepted_values: 
+        values: ['Entire home/apt',
+                  'Private room',
+                   'Shared room',
+                   'Hotel room']
+
+          
+        

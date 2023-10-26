@@ -1,6 +1,6 @@
 WITH raw_listings AS (
 
--- SELECT * FROM AIRBNB.RAW.RAW_LISTINGS instead of accessing directly reference it by source
+ --SELECT * FROM AIRBNB.RAW.RAW_LISTINGS --instead of accessing directly reference it by source
  select * from {{source('airbnb','listings')}}
 )
 SELECT
